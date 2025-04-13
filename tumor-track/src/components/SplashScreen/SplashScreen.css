@@ -1,0 +1,56 @@
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #828282); /* Gradient background */
+    text-align: center;
+    position: relative;
+    animation-fill-mode: forwards; /* Keeps the container hidden after fade-out */
+  }
+  
+  .splash-image {
+    width: 50%; /* Adjust the size */
+    height: auto; /* Maintain aspect ratio */
+    animation: slideInFromLeftSide 1.8s ease-in-out; /* Slide-in from the left animation */
+    animation-fill-mode: forwards; /* Prevents the image from resetting its position */
+    position: absolute; /* Ensures it stays independent of the container's animation */
+  }
+  
+  /* Keyframes for slide-in from the left effect */
+  @keyframes slideInFromLeftSide {
+    from {
+      transform: translateX(-100%); /* Start off-screen to the left */
+      opacity: 0; /* Invisible at start */
+    }
+    to {
+      transform: translateX(0); /* Move to its final position */
+      opacity: 1; /* Fully visible */
+    }
+  }
+
+  /* Mobile-specific styles */
+@media (max-width: 768px) {
+  .splash-image {
+    width: 110%; /* Adjust size for smaller screens */
+    animation: slideInAndMoveUp 1.7s ease-in-out; /* Chained animation */
+  }
+  
+  /* Keyframes for the chained animation */
+  @keyframes slideInAndMoveUp {
+    0% {
+      transform: translateY(-100%); /* Start off-screen to the top */
+      opacity: 0; /* Invisible at start */
+    }
+    65% {
+      transform: translateY(0); /* Move to its initial position */
+      opacity: 1; /* Fully visible */
+    }
+    100% {
+      transform: translateY(-20%); /* Move upward suddenly */
+      opacity: 1; /* Stay fully visible */
+    }
+  }
+  
+}

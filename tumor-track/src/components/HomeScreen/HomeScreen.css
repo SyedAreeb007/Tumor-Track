@@ -1,0 +1,517 @@
+/* HomeScreen.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("../../assets/images/background-gradient-image.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.home-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+  /* Keeps the container visible after animation */
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  height: 85%;
+  background-color: #fbf7f7;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-22%, -50%);
+  width: 60%;
+  height: 92%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.upper-right-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-10%, 10%);
+  width: 20%;
+  height: auto;
+  z-index: 3;
+}
+
+.navbar-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17%, 46%);
+  width: 18%;
+  z-index: 4;
+}
+
+/* Navbar Image Animation */
+.navbar-image {
+  width: 100%;
+  height: auto;
+  animation: slideInFromTop 2s ease-out forwards;
+  /* Animation for coming from the top */
+}
+
+/* Keyframes for sliding in from top */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    /* Start off-screen from the top */
+    opacity: 0;
+    /* Invisible at start */
+  }
+
+  to {
+    transform: translateY(0);
+    /* Move to the final position */
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+
+/* Button Icons Animation */
+.button-icons {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  z-index: 5;
+  animation: slideInFromTop 2s ease-out forwards;
+  /* Same animation for buttons */
+}
+
+.button-icon {
+  width: 15%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button-icon:hover {
+  transform: scale(1.1);
+}
+
+.home-icon {
+  margin-right: auto;
+}
+
+.scan-icon {
+  margin: 0 auto;
+}
+
+.document-icon {
+  margin-left: auto;
+}
+
+.bottom-left-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(150%, -30%);
+  width: 20%;
+  height: 50%;
+  z-index: 2;
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromTheLeft {
+  from {
+    transform: translateX(-40%);
+    /* Start off-screen to the left */
+    opacity: 1;
+    /* Visible from the start */
+  }
+
+  to {
+    transform: translateX(0);
+    /* Move to its original position */
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+
+/* Brain desktop image */
+.brain-desktop-image {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  animation: slideInFromTheLeft 1s ease-out forwards;
+  /* Apply the animation */
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 9%;
+  /* Adjust based on desired vertical position */
+  left: 5%;
+  /* Adjust for horizontal alignment */
+  width: 80%;
+  /* Width of the text container */
+  text-align: center;
+  z-index: 4;
+  /* Make sure it stays above the other images */
+  animation: zoomedOut 1.8s ease-out forwards;
+}
+
+.text-overlay p {
+  font-size: 1.5rem;
+  /* Adjust the font size as per requirement */
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  /* Adjust text color */
+  line-height: 1.5;
+  margin: 11%;
+  margin-left: 27%;
+  max-width: 27%;
+}
+
+.heading-overlay {
+  position: absolute;
+  bottom: 57%;
+  /* Adjust based on desired vertical position */
+  left: -2%;
+  /* Adjust for horizontal alignment */
+  width: 80%;
+  /* Width of the text container */
+  text-align: center;
+  z-index: 4;
+  /* Make sure it stays above the other images */
+  animation: zoomedOut 1.2s ease-out forwards;
+}
+
+@keyframes zoomedOut {
+  from {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tumor-heading {
+  font-size: 4.5rem;
+  /* Larger font size for "T U M O R" */
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  /* Adjust text color */
+  margin: 0;
+  letter-spacing: 1rem;
+  /* Add letter spacing */
+  line-height: 1.2;
+  /* Adjust line height for spacing between lines */
+}
+
+.track-heading {
+  font-size: 4.5rem;
+  /* Slightly smaller for "T R A C K" */
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  margin-top: -10px;
+  letter-spacing: 1rem;
+  /* Add letter spacing */
+  line-height: 1.2;
+  /* Adjust line height */
+}
+
+/* Styles for the Scan Now! button */
+.scan-now-button {
+  position: absolute;
+  bottom: 18%;
+  /* Adjust position below the text */
+  left: 38%;
+  transform: translateX(-50%);
+  /* Center the button horizontally */
+  z-index: 5;
+  /* Ensure it stays above other elements */
+  animation: fadeIn 2s ease-out forwards
+}
+
+.scan-now-button button {
+  background-color: #828282;
+  /* Gray color */
+  color: white;
+  border: none;
+  padding: 10px 50px;
+  /* Adjust padding as needed */
+  border-radius: 25px;
+  /* Rounded corners */
+  font-size: 1.2rem;
+  /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scan-now-button button:hover {
+  background-color: #6f6f6f;
+  /* Darker gray on hover */
+  transform: scale(1.05);
+  /* Slight scaling effect */
+}
+
+.scan-now-button button:focus {
+  outline: none;
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+  from {
+    transform: translate(-100%, -50%);
+    /* Start off-screen to the left */
+    opacity: 0;
+    /* Initially invisible */
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+    /* End at the desired position */
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+
+/* Tumor video container */
+.video-container-tumor {
+  position: absolute;
+  top: 24%;
+  /* Center vertically */
+  left: 12%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  width: 250px;
+  /* Adjust the width of the container (square) */
+  height: 250px;
+  /* Adjust the height of the container (square) */
+  border-radius: 25px;
+  /* Rounded edges for the square container */
+  overflow: hidden;
+  /* Ensure the video doesn't overflow the rounded corners */
+  z-index: 6;
+  /* Make sure it stays above other elements */
+  animation: slideInFromLeft 1s ease-out forwards;
+  /* Animation for sliding in */
+}
+
+/* MRI video container */
+.video-container-mri {
+  position: absolute;
+  top: 71%;
+  /* Center vertically */
+  left: 12%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  width: 250px;
+  /* Adjust the width of the container (square) */
+  height: 310px;
+  /* Adjust the height of the container (square) */
+  border-radius: 25px;
+  /* Rounded edges for the square container */
+  overflow: hidden;
+  /* Ensure the video doesn't overflow the rounded corners */
+  z-index: 6;
+  /* Make sure it stays above other elements */
+  animation: slideInFromLeft 0.5s forwards;
+  /* Delayed animation */
+}
+
+/* Style for the video elements */
+.video-tumor,
+.video-mri {
+  width: 100%;
+  /* Ensure the video fills the container */
+  height: 100%;
+  /* Ensure the video fills the container */
+  object-fit: cover;
+  /* Ensure the video covers the whole container */
+}
+
+.mobile-navbar,
+.brain-mobile-image {
+  display: none;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+
+  .overlay-image,
+  .upper-right-image,
+  .bottom-left-image,
+  .brain-desktop-image,
+  .video-container-tumor,
+  .video-container-mri,
+  .navbar-image,
+  .button-icon {
+    display: none;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FEFEFE 0%, #FBFBF9 50%, #DDDDDC 79%);
+    border-radius: 0;
+    padding: 2rem;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1%;
+    margin-left: -5%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-logo {
+    width: 20%;
+    height: auto;
+    animation: fadeIn 2s ease-out forwards;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    width: 15%;
+    height: auto;
+    animation: fadeIn 2s ease-out forwards;
+    cursor: pointer;
+  }
+
+  .mobile-nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideInFromTop 0.3s ease-out forwards;
+  }
+
+  .mobile-nav-icon {
+    width: 10%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-nav-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .brain-mobile-image {
+    display: flex;
+    width: 125%;
+    height: auto;
+    margin-left: -13%;
+    margin-top: -17%;
+    position: relative;
+    z-index: 1;
+    animation: slideInFromHalfBottom 1.2s ease-in-out;
+  }
+
+  /* Keyframes for the slide-in animation from half bottom */
+  @keyframes slideInFromHalfBottom {
+    0% {
+      transform: translateY(50%);
+      /* Start halfway from the bottom */
+      opacity: 1;
+      /* Invisible at start */
+    }
+
+    50% {
+      transform: translateY(0);
+      /* Final position */
+      opacity: 1;
+      /* Fully visible */
+    }
+  }
+
+  .heading-overlay {
+    top: 51%;
+    left: 10%;
+  }
+
+  .tumor-heading,
+  .track-heading {
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+  }
+
+  .text-overlay {
+    left: 5%;
+    width: 80%;
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    line-height: 1;
+    margin-left: 27%;
+    margin-top: -70%;
+    max-width: 100%;
+  }
+
+  .scan-now-button {
+    width: 80%;
+    bottom: 15%;
+    left: 50%;
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  /* Keyframes for slide-in from the top effect */
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+      /* Start off-screen to the top */
+      opacity: 0;
+      /* Invisible at start */
+    }
+
+    to {
+      transform: translateY(0);
+      /* Move to its final position */
+      opacity: 1;
+      /* Fully visible */
+    }
+  }
+}
